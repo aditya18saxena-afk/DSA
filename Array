@@ -1,1 +1,16 @@
+Problem - Absolute Difference Between Maximum and Minimum K Elements
+solution:-
 
+int absDifference(vector<int>& nums, int k) {
+        int n = nums.size();
+        sort(nums.begin(),nums.end());
+        int maxk = 0;
+        int mink = 0;
+        for(int i=0;i<k;i++){
+            mink += nums[i];
+        }
+        for(int i=0;i<k;i++){
+            maxk += nums[n-1-i];
+        }
+        return abs(maxk-mink);
+}
