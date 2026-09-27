@@ -1,1 +1,17 @@
+Problem - Sum of Elements With Frequency Divisible by K
+Solution :-
 
+int sumDivisibleByK(vector<int>& nums, int k) {
+        int n = nums.size();
+        map<int,int> mpp;
+        for(int i =0;i<n;i++){
+            mpp[nums[i]]++;
+        }
+        int sum=0;
+        for(auto it:mpp){
+            if(it.second%k==0){
+                sum=sum+it.first*it.second;
+            }
+        }
+        return sum;
+}
